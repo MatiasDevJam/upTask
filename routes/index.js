@@ -1,9 +1,13 @@
 var express = require('express');
 var router = express.Router();
-const proyectosController = require("../controllers/proyectosController")
+const {index, formularioProyecto, nuevoProyecto, proyectoPorUrl} = require("../controllers/proyectosController");
+const proyectoValidator = require('../validations/proyectoValidator')
 
-router.get('/', proyectosController.index);
-router.get('/nuevo-proyecto', proyectosController.formularioProyecto);
-router.post('/nuevo-proyecto', proyectosController.nuevoProyecto);
+router.get('/', index);
+router.get('/nuevo-proyecto', formularioProyecto);
+router.post('/nuevo-proyecto', proyectoValidator, nuevoProyecto);
+
+//listar proyecto
+router.get('/proyectos/:url', proyectoPorUrl)
 
 module.exports = router;

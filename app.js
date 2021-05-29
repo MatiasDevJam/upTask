@@ -6,7 +6,10 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 
+
 var app = express();
+//Requerimos el archivo helpers
+var helpers = require('./helpers');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -17,6 +20,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+//implementamos el helpers como un middleware de aplicación
+app.use((req, res, next) =>{
+  res.locals.vardump = helpers.vardump;
+  next();
+})
 
 app.use('/', indexRouter);
 

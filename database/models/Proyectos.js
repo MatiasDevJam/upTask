@@ -9,18 +9,22 @@ module.exports = (sequelize, DataTypes) => {
 
     let cols = {
         id: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.INTEGER(11),
+            primaryKey: true,
             autoIncrement: true,
             allowNull: false,
-            primaryKey: true
         },
         nombre: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(100),
             allowNull: false,
         },
         url: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(100),
         }, 
+        usuarioId: {
+            type: DataTypes.INTEGER(11),
+            allowNull: false
+        }
         
     };
 

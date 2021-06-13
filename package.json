@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon ./bin/www",
-    "start": "concurrently \"npm run dev\" \"npm run watch\"",
+    "dev": "concurrently \"npm run dev\" \"npm run watch\"",
+    "start": "node ./bin/www",
     "watch": "webpack -w --mode development"
   },
   "dependencies": {
@@ -14,6 +14,7 @@
     "connect-flash": "^0.1.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "dotenv": "^10.0.0",
     "express": "~4.16.1",
     "express-session": "^1.17.2",
     "express-validator": "^6.11.1",

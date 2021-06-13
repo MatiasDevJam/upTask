@@ -1,9 +1,11 @@
+require('dotenv').config({path: 'process.env'});
+
 module.exports = {
   "development": {
-    "username": "root",
+    "username": process.env.BD_USER,
     "password": null,
-    "database": "up_task",
-    "host": "127.0.0.1",
+    "database": process.env.BD_NAME,
+    "host": process.env.BD_HOST,
     "dialect": "mysql"
   },
   "test": {

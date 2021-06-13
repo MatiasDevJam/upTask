@@ -10,6 +10,7 @@ var proyectosRouter = require('./routes/proyectos');
 var tareasRouter = require('./routes/tareas');
 var usuariosRouter = require('./routes/usuarios');
 var passport = require('./config/passport');
+require('dotenv').config({path: 'process.env'});
 
 var app = express();
 //Requerimos el archivo helpers
